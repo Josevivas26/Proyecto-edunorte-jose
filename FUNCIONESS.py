@@ -6,19 +6,21 @@
 #5- para cambiar el scope de una variable, utilizar return
 
 #FUNCIONES SIN PARAMETROS
+
 #def miFuncion():
     #conjunto de instrucciones
 
+
 def derechos_humanos():
-    d1="Derecho a la vida"
-    d2="Derecho a la igualdad ante la ley"
-    d3="Derecho a la libertad"
+    print("Derecho a la vida")
+    print("Derecho a la igualdad ante la ley")
+    print("Derecho a la libertad")
 
 derechos_humanos()
 
 def derechos_mayorDeEdad():
-    d4="Derecho a votar"
-    d5="Derecho al trabajo"
+    print("Derecho a votar")
+    print("Derecho al trabajo")
 
 def mayoria_de_edad(nombre,edad):
     print(f'Según la edad de {nombre}, sus derechos son:')
@@ -36,8 +38,7 @@ def mayoria_de_edad2(edad,nombre='DESCONOCIDO'):
     else:
         derechos_humanos()
 
+MM = int(input("digite su edad"))
+SS = input("ESCRIBA SU NFFFFOMBRE")
+mayoria_de_edad2(MM)
 
-#seleciona el importe
-if __name__=="__main__" :
-    mayoria_de_edad()
-    mayoria_de_edad2()

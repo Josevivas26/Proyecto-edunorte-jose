@@ -1,10 +1,15 @@
 import tkinter as tkr
 from tkinter import simpledialog
 
+
+
+    
+
 # Crear la ventana principal
 base = tkr.Tk()
 # PARA PONER TITULO A LA VENTANA PRINCIPAL
 base.title("djfngdher")
+
 
 # Mostrar el input box
 ingreso_dato = simpledialog.askinteger("ttttXX", "ppppYYY")
