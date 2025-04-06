@@ -1,16 +1,21 @@
-import tkinter as tkr
-from tkinter import simpledialog
-import FUNCIONESS as fun 
-from FUNCIONESS import mayoria_de_edad2, mayoria_de_edad
+import pygame
+import sys
 
-base = tkr.Tk()
-base.title("djfngdher")
+pygame.init()
+screen = pygame.display.set_mode((900, 520))
+clock_fps = pygame.time.clock()
+runing = False
 
-nombre= simpledialog.askstring("nombre", "digite su nombre:")
-edad= simpledialog.askstring("edad", "digite su edad:")
-RR=fun.mayoria_de_edad(nom,ed)
-usar_label = tkr.Label.base,text=mayoria_de_edad(nom,ed),font=
-usar_label.pack(pady=30)
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 
-base.mainloop()
+            screen.fill("purple")
 
+            pygame.display.flip()
+
+            clock_fps.tick(60) #limites fps to 60
+
+pygame.quit()
+sys.exit()            
