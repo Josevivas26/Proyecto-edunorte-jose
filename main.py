@@ -1,21 +1,34 @@
-import pygame
-import sys
+# main.py
+from procesador_datos import ProcesadorDatos
+import logging
+from config import Config
 
-pygame.init()
-screen = pygame.display.set_mode((900, 520))
-clock_fps = pygame.time.clock()
-runing = False
+# Configurar logging
+logging.basicConfig(level=Config().LOG_LEVEL)
+logger = logging.getLogger(__name__)
 
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+def main():
+    logger.info("Iniciando procesamiento de datos...")
+    
+    try:
+        procesador = ProcesadorDatos()
+        
+        # Cargar datos desde XLSX
+        datos = procesador.cargar_datos()
+        logger.info(f"Datos cargados correctamente. Forma: {datos.shape}")
+        
+        # Generar reporte
+        reporte = procesador.generar_reporte(datos)
+        
+        # Guardar reporte
+        with open('output/reporte_ventas.txt', 'w') as f:
+            f.write(reporte)
+        
+        logger.info("Proceso completado exitosamente")
+        
+    except Exception as e:
+        logger.error(f"Error en el proceso: {str(e)}")
+        raise
 
-            screen.fill("purple")
-
-            pygame.display.flip()
-
-            clock_fps.tick(60) #limites fps to 60
-
-pygame.quit()
-sys.exit()            
+if __name__ == "__main__":
+    main()
